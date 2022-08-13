@@ -6,13 +6,12 @@ pipeline
         stage(build)
         {
             steps{
-               sh ...
+               sh '''
                pwd
                ls
                echo "this is to build"
-               ...
-            
-            }
+               '''
+                        }
         }
         stage (test)
         {
