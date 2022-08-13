@@ -3,6 +3,10 @@ pipeline
     agent {label 'label'}
     stages
     {
+    stage (testing)
+    {
+    parallel
+    {
         stage(build)
         {
             steps{
@@ -26,4 +30,5 @@ pipeline
         }
         }
     }
+}
 }
