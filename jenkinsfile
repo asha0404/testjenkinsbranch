@@ -1,6 +1,6 @@
 pipeline
 {
-    agent {label 'label'}
+    agent any
     stages
     {
     stage (testing)
@@ -30,5 +30,6 @@ pipeline
         }
         }
     }
+}
 }
 }
