@@ -1,0 +1,27 @@
+pipeline
+{
+    agent any
+    stages
+    {
+        stage(build)
+        {
+            steps{
+               sh ...
+               pwd
+               ls
+               echo "this is to build"
+            
+            }
+        }
+        stage (test)
+        {
+            steps {
+                echo "to test"
+            }
+        }
+        stage (deploy)
+        {
+            sh echo "this is to deploy to tomcat"
+        }
+    }
+}
