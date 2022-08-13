@@ -21,7 +21,7 @@ pipeline
         }
         stage (deploy)
         {
-            sh echo "this is to deploy to tomcat"
+            sh "echo this is to deploy to tomcat"
         }
     }
 }
