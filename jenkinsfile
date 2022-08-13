@@ -10,6 +10,7 @@ pipeline
                pwd
                ls
                echo "this is to build"
+               ...
             
             }
         }
