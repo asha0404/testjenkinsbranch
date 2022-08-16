@@ -8,9 +8,12 @@ parameters {
         {
         git credentialsId: 'c5aa0612-9d9b-4219-8a1e-351349d3b2da', url: 'https://github.com/asha0404/jenkinspipeline.git'    
         }
-        script {
-        if(param)
+        stage('testing')
         {
+      parallel
+      {
+       script {
+        if(param)
         stage('testing1') 
         {
     sh "echo this is a testing 1 stage"
@@ -18,6 +21,7 @@ parameters {
 stage ('testing2')
 {
     sh "echo this is testing 2 stage"
+}
 }
 }
 }
