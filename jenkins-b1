@@ -17,7 +17,6 @@ parameters {
         when {
                 expression { params.BRANCH_NAME == 'master' }
             }
-  agent any   
         steps{
        sh "echo this is a testing 1 stage"
 }
@@ -27,7 +26,6 @@ stage ('testing2')
  when {
                 expression { params.BRANCH_NAME == 'master' }
             }
-  agent any
 steps
 {
     sh "echo this is testing 2 stage"
