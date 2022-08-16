@@ -1,4 +1,8 @@
 pipeline {
+parameters {
+  choice choices: ['master'], name: 'BRANCH_NAME'
+}
+
     agent any
       stages{
         stage('checkout')
@@ -11,8 +15,8 @@ pipeline {
         stage('testing1')
         {
         when {
-  branch 'master'
-  }
+                expression { params.BRANCH_NAME == 'master' }
+            }
   agent any   
         steps{
        sh "echo this is a testing 1 stage"
@@ -21,8 +25,8 @@ pipeline {
 stage ('testing2')
 {
  when {
-  branch 'master'
-  }
+                expression { params.BRANCH_NAME == 'master' }
+            }
   agent any
 steps
 {
@@ -31,4 +35,5 @@ steps
 }
 }
 }
+
 
