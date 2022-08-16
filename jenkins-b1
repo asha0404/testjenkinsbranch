@@ -12,19 +12,21 @@ pipeline {
         {
         when {
   branch 'master'
-  } 
+   
         steps{
        sh "echo this is a testing 1 stage"
+}
 }
 }
 stage ('testing2')
 {
  when {
   branch 'master'
-  } 
+  
 steps
 {
     sh "echo this is testing 2 stage"
+}
 }
 }
 }
