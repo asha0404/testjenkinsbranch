@@ -1,9 +1,9 @@
 pipeline {
     agent any
-parameters {
-  string defaultValue: 'master', description: 'this should work only for master git branch', name: 'git branch'
+    environment {
+  branch = "master"
 }
-    stages{
+  stages{
         stage('checkout')
         {
         steps
@@ -13,7 +13,9 @@ parameters {
         }
         stage('testing')
         {
-        parallel
+        script
+        {
+        if (env.branch='master)
         {
               stage('testing1') 
         {
@@ -26,6 +28,8 @@ stage ('testing2')
 steps
 {
     sh "echo this is testing 2 stage"
+}
+}
 }
 }
 }
