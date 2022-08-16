@@ -1,9 +1,6 @@
 pipeline {
     agent any
-    environment {
-  branch = "master"
-}
-  stages{
+      stages{
         stage('checkout')
         {
         steps
@@ -13,11 +10,11 @@ pipeline {
         }
         stage('testing')
         {
-        script
-        {
-        if (env.branch='master')
-        {
-              stage('testing1') 
+        when {
+  branch 'master'
+  }
+
+            stage('testing1') 
         {
         steps{
        sh "echo this is a testing 1 stage"
