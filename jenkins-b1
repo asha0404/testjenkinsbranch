@@ -13,6 +13,8 @@ parameters {
         }
         stage('testing')
         {
+        parallel
+        {
               stage('testing1') 
         {
         steps{
@@ -24,6 +26,7 @@ stage ('testing2')
 steps
 {
     sh "echo this is testing 2 stage"
+}
 }
 }
 }
