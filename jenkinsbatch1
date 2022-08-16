@@ -1,0 +1,34 @@
+pipeline {
+parameters {
+  choice choices: ['master', 'main', 'dev'], name: 'BRANCH_NAME'
+}
+  agent any
+      stages{
+        stage('checkout')
+        {
+        steps
+        {
+        git credentialsId: 'c5aa0612-9d9b-4219-8a1e-351349d3b2da', url: 'https://github.com/asha0404/jenkinspipeline.git'    
+        }
+        }
+        stage('testing1')
+        {
+        when {
+                expression { params.BRANCH_NAME == 'master' }
+            }
+        steps{
+       sh "echo this is a testing 1 stage"
+}
+}
+stage ('testing2')
+{
+ when {
+                expression { params.BRANCH_NAME == 'master' }
+            }
+steps
+{
+    sh "echo this is testing 2 stage"
+}
+}
+}
+}
