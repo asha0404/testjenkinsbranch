@@ -15,7 +15,7 @@ pipeline {
         {
         script
         {
-        if (env.branch='master)
+        if (env.branch='master')
         {
               stage('testing1') 
         {
